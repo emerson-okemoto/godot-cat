@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://v5iq3se17v1t"]
+
+[ext_resource type="Script" uid="uid://bh6lbauhug6rv" path="res://scripts/inimigo.gd" id="1_ini"]
+[ext_resource type="Texture2D" uid="uid://cnohcpms73u0a" path="res://sprites/gato_cinza_16x16.png" id="2_gato"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_4"]
+atlas = ExtResource("2_gato")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_5"]
+atlas = ExtResource("2_gato")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_6"]
+atlas = ExtResource("2_gato")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_7"]
+atlas = ExtResource("2_gato")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_8"]
+atlas = ExtResource("2_gato")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_9"]
+atlas = ExtResource("2_gato")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_10"]
+atlas = ExtResource("2_gato")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_11"]
+atlas = ExtResource("2_gato")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_12"]
+atlas = ExtResource("2_gato")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_13"]
+atlas = ExtResource("2_gato")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_14"]
+atlas = ExtResource("2_gato")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_15"]
+atlas = ExtResource("2_gato")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_0"]
+atlas = ExtResource("2_gato")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_1"]
+atlas = ExtResource("2_gato")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_2"]
+atlas = ExtResource("2_gato")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gato_3"]
+atlas = ExtResource("2_gato")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gato"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_7")
+}],
+"loop": 1,
+"name": &"andar",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_11")
+}],
+"loop": 0,
+"name": &"ataque",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_15")
+}],
+"loop": 0,
+"name": &"dano",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gato_3")
+}],
+"loop": 1,
+"name": &"parado",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="Shape_gato"]
+size = Vector2(10, 6)
+
+[node name="Inimigo" type="CharacterBody2D" unique_id=810090960 groups=["inimigo"]]
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_ini")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=618080646]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_gato")
+animation = &"andar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1224255615]
+position = Vector2(0, 5)
+shape = SubResource("Shape_gato")
