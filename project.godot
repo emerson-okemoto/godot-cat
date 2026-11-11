@@ -8,14 +8,22 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="feira-gatos"
+config/name="Feira de Rua com Gatos Famintos"
 run/main_scene="res://scenes/vila.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [display]
 
+window/size/viewport_width=640
+window/size/viewport_height=384
+window/size/window_width_override=1280
+window/size/window_height_override=768
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
