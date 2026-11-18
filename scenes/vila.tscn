@@ -4,14 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://4h6q6xr8cut6" path="res://entities/jogador.tscn" id="2_4h05w"]
 [ext_resource type="Script" uid="uid://knwxfs70c8of" path="res://scripts/vila.gd" id="4_vila"]
 [ext_resource type="PackedScene" uid="uid://v5iq3se17v1t" path="res://entities/inimigo.tscn" id="5_ini"]
-[ext_resource type="Texture2D" uid="uid://dfsa0ywaicdmn" path="res://sprites/barraca_danos_32x32.png" id="6_barraca"]
 [ext_resource type="Texture2D" uid="uid://cfe27bjlk6b4s" path="res://sprites/efeitos_16x16.png" id="7_efeitos"]
 [ext_resource type="Texture2D" uid="uid://cscnyn0ftyolw" path="res://sprites/vida_objeto_48x16.png" id="8_barra"]
+[ext_resource type="Texture2D" uid="uid://c7x58ytxq1elx" path="res://sprites/barraca_peixes_danos_384x48.png" id="15_v6rbp"]
 [ext_resource type="Texture2D" uid="uid://bgitexu23lgj4" path="res://sprites/feira/barraca_padaria.png" id="20_prop_3"]
 [ext_resource type="Texture2D" uid="uid://cirgkv652elcg" path="res://sprites/feira/barraca_paes.png" id="20_prop_4"]
 [ext_resource type="Texture2D" uid="uid://wmmd1tlud7rt" path="res://sprites/feira/barraca_frutas.png" id="20_prop_5"]
 [ext_resource type="Texture2D" uid="uid://q26s5vbxenxu" path="res://sprites/feira/barraca_verduras.png" id="20_prop_6"]
-[ext_resource type="Texture2D" uid="uid://c2incee1g0ibl" path="res://sprites/feira/barraca_peixes.png" id="20_prop_7"]
 [ext_resource type="Texture2D" uid="uid://dmcolv2omhbyn" path="res://sprites/feira/banca_xadrez.png" id="20_prop_8"]
 [ext_resource type="Texture2D" uid="uid://cn5tr1tgy25ey" path="res://sprites/feira/banca_azul.png" id="20_prop_9"]
 [ext_resource type="Texture2D" uid="uid://c0bgfjprmlms8" path="res://sprites/feira/guarda_sol_azul.png" id="21_deco_1"]
@@ -23,9 +22,6 @@
 size = Vector2(56, 36)
 
 [sub_resource type="RectangleShape2D" id="Barraca_1_shape"]
-size = Vector2(56, 36)
-
-[sub_resource type="RectangleShape2D" id="Barraca_2_shape"]
 size = Vector2(56, 36)
 
 [sub_resource type="RectangleShape2D" id="Barraca_3_shape"]
@@ -40,9 +36,6 @@ size = Vector2(56, 36)
 [sub_resource type="RectangleShape2D" id="Barraca_6_shape"]
 size = Vector2(56, 36)
 
-[sub_resource type="RectangleShape2D" id="Barraca_7_shape"]
-size = Vector2(56, 36)
-
 [sub_resource type="RectangleShape2D" id="Barraca_8_shape"]
 size = Vector2(56, 36)
 
@@ -52,6 +45,7 @@ size = Vector2(56, 36)
 [node name="Vila" type="Node2D" unique_id=804844769]
 script = ExtResource("4_vila")
 cena_inimigo = ExtResource("5_ini")
+metadata/_edit_vertical_guides_ = [301.0]
 
 [node name="chao" type="TileMapLayer" parent="." unique_id=1076381755]
 z_index = -3
@@ -121,18 +115,6 @@ texture = ExtResource("20_prop_6")
 position = Vector2(0, 4)
 shape = SubResource("Barraca_1_shape")
 
-[node name="Peixaria_Nordeste" type="StaticBody2D" parent="BarracasSecundarias" unique_id=338750907]
-position = Vector2(448, 72)
-collision_mask = 0
-
-[node name="Arte" type="Sprite2D" parent="BarracasSecundarias/Peixaria_Nordeste" unique_id=437260838]
-texture_filter = 1
-texture = ExtResource("20_prop_7")
-
-[node name="Colisao" type="CollisionShape2D" parent="BarracasSecundarias/Peixaria_Nordeste" unique_id=1681852134]
-position = Vector2(0, 4)
-shape = SubResource("Barraca_2_shape")
-
 [node name="Padaria_Nordeste" type="StaticBody2D" parent="BarracasSecundarias" unique_id=1998328543]
 position = Vector2(560, 72)
 collision_mask = 0
@@ -142,6 +124,18 @@ texture_filter = 1
 texture = ExtResource("20_prop_3")
 
 [node name="Colisao" type="CollisionShape2D" parent="BarracasSecundarias/Padaria_Nordeste" unique_id=1443028293]
+position = Vector2(0, 4)
+shape = SubResource("Barraca_3_shape")
+
+[node name="Padaria_Nordeste2" type="StaticBody2D" parent="BarracasSecundarias" unique_id=1014616902]
+position = Vector2(440, 73)
+collision_mask = 0
+
+[node name="Arte" type="Sprite2D" parent="BarracasSecundarias/Padaria_Nordeste2" unique_id=100946785]
+texture_filter = 1
+texture = ExtResource("20_prop_3")
+
+[node name="Colisao" type="CollisionShape2D" parent="BarracasSecundarias/Padaria_Nordeste2" unique_id=1509641366]
 position = Vector2(0, 4)
 shape = SubResource("Barraca_3_shape")
 
@@ -170,7 +164,7 @@ position = Vector2(0, 4)
 shape = SubResource("Barraca_5_shape")
 
 [node name="Hortifruti_Sudeste" type="StaticBody2D" parent="BarracasSecundarias" unique_id=687350814]
-position = Vector2(448, 296)
+position = Vector2(455, 296)
 collision_mask = 0
 
 [node name="Arte" type="Sprite2D" parent="BarracasSecundarias/Hortifruti_Sudeste" unique_id=469915456]
@@ -181,17 +175,17 @@ texture = ExtResource("20_prop_6")
 position = Vector2(0, 4)
 shape = SubResource("Barraca_6_shape")
 
-[node name="Peixes_Sudeste" type="StaticBody2D" parent="BarracasSecundarias" unique_id=2078491668]
-position = Vector2(560, 296)
+[node name="Hortifruti_Sudeste2" type="StaticBody2D" parent="BarracasSecundarias" unique_id=531241398]
+position = Vector2(566, 298)
 collision_mask = 0
 
-[node name="Arte" type="Sprite2D" parent="BarracasSecundarias/Peixes_Sudeste" unique_id=626140183]
+[node name="Arte" type="Sprite2D" parent="BarracasSecundarias/Hortifruti_Sudeste2" unique_id=953155317]
 texture_filter = 1
-texture = ExtResource("20_prop_7")
+texture = ExtResource("20_prop_6")
 
-[node name="Colisao" type="CollisionShape2D" parent="BarracasSecundarias/Peixes_Sudeste" unique_id=1544410311]
+[node name="Colisao" type="CollisionShape2D" parent="BarracasSecundarias/Hortifruti_Sudeste2" unique_id=1806398969]
 position = Vector2(0, 4)
-shape = SubResource("Barraca_7_shape")
+shape = SubResource("Barraca_6_shape")
 
 [node name="Banca_Oeste" type="StaticBody2D" parent="BarracasSecundarias" unique_id=173043948]
 position = Vector2(96, 152)
@@ -235,18 +229,19 @@ position = Vector2(312, 40)
 position = Vector2(312, 344)
 
 [node name="Horda" type="Timer" parent="." unique_id=1923713049]
-wait_time = 3.0
+wait_time = 1.2999999999999998
 autostart = true
 
 [node name="Relogio" type="Timer" parent="." unique_id=129781355]
-wait_time = 180.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
 [node name="Barraca" type="Sprite2D" parent="." unique_id=1556851917 groups=["barraca"]]
 z_index = 1
-position = Vector2(361, 154)
-texture = ExtResource("6_barraca")
+position = Vector2(345, 167)
+scale = Vector2(0.71, 0.8)
+texture = ExtResource("15_v6rbp")
 hframes = 6
 
 [node name="Impacto" type="Sprite2D" parent="Barraca" unique_id=2075840856]

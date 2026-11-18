@@ -1,8 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://ol1d87dh7wlh"]
 
-[ext_resource type="Script" path="res://scripts/fim.gd" id="1_fim"]
+[ext_resource type="Script" uid="uid://cqgc41e0xw0jm" path="res://scripts/fim.gd" id="1_fim"]
+[ext_resource type="Texture2D" uid="uid://b6afjexq2vd" path="res://sprites/tela/vitória_na_barraca_de_peixes.png" id="2_3oowa"]
 
-[node name="Fim" type="Control"]
+[node name="Fim" type="Control" unique_id=1646927222]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fim")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1770993733]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +20,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "Você venceu!\nEnter para jogar de novo"
+text = "Você venceu!
+Enter para jogar de novo"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1821770720]
+layout_mode = 0
+offset_right = 627.0
+offset_bottom = 372.0
+texture = ExtResource("2_3oowa")
+expand_mode = 1
+stretch_mode = 6
