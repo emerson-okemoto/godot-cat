@@ -54,3 +54,8 @@ O que fiz: Realizei ajustes finais na jogabilidade, revisei o funcionamento do c
 O que travou: Durante os testes, percebi que precisava evitar a execução simultânea das condições de vitória e derrota quando o tempo terminava próximo de um ataque dos gatos.
 
 Como resolvi: Revisei a lógica de encerramento da partida, utilizei uma variável de controle para impedir múltiplas finalizações e organizei os arquivos para a apresentação.
+
+
+### Criação dos sprites de ataque com vassoura
+
+Utilizei inteligência artificial generativa para criar os sprites da animação de ataque com vassoura. A animação mostra a feirante usando a vassoura para espantar os gatos que se aproximam da barraca de peixes.
